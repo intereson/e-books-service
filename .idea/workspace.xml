@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="e-books-service:war" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cba97c64-1952-4bde-86b9-76423e016726" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/utils/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/users/createUser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -35,8 +51,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2YkqGSDcHHU8V970oshWxEIgLGr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -56,7 +82,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
@@ -67,12 +93,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.83" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.83" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="e-books-service:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/e_books_service_war" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
@@ -163,7 +190,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701079829399</updated>
-      <workItem from="1701079831074" duration="5394000" />
+      <workItem from="1701079831074" duration="12313000" />
+      <workItem from="1701245253989" duration="28346000" />
     </task>
     <servers />
   </component>
@@ -192,5 +220,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -5,13 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class User {
+public class ShoppingCart {
     private long id;
-    private String name;
-    private String surname;
-    private String mail;
+    private List<Book> books;
 }
