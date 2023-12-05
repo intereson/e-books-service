@@ -2,6 +2,7 @@ package by.intereson.ebooksservice.services;
 
 import by.intereson.ebooksservice.entities.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface UserService {
@@ -13,4 +14,6 @@ public interface UserService {
     User updateUser(User user, User userNew);
 
     boolean deleteUser(User user);
+
+    boolean checkUser(HttpServletRequest req);
 }

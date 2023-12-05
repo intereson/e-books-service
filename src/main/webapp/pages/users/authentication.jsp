@@ -28,6 +28,10 @@
             </td>
         </tr>
     </form>
+    </a>
+    <a href="/users/create">
+        <p>Registration</p>
+    </a>
     </tbody>
 </table>
 </body>

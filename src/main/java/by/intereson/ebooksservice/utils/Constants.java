@@ -14,6 +14,7 @@ public class Constants {
     public static final String DELETE_USERS_PAGE = "/pages/users/deleteUser.jsp";
     public static final String UPDATE_USERS_PAGE = "/pages/users/updateUser.jsp";
     public static final String AUTHENTICATION_USER = "/pages/users/authentication.jsp";
+    public static final String ERROR_LOGIN_OR_PASSWORD="/pages/users/ErrorLoginOrPass.jsp";
     public static final String BOOK_NAME = "bookName";
     public static final String AUTHOR = "author";
     public static final String YEAR_OF_PUBLISHING = "yearOfPublishing";

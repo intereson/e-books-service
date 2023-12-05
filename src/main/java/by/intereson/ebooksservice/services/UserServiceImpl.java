@@ -4,7 +4,9 @@ import by.intereson.ebooksservice.entities.User;
 import by.intereson.ebooksservice.repositories.UserRepository;
 import by.intereson.ebooksservice.repositories.UserRepositoryImpl;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Optional;
 
 public class UserServiceImpl implements UserService {
     private static UserService userService;
@@ -38,6 +40,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean deleteUser(User user) {
         return userRepository.deleteUser(user);
+    }
+
+    @Override
+    public boolean checkUser(HttpServletRequest req) {
+        Optional<User> user = userRepository.getUser(req.getParameter("login"), req.getParameter("password"));
+        return user.isPresent();
     }
 
     public static UserService getInstance() {

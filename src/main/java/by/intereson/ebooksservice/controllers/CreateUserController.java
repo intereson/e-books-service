@@ -25,7 +25,7 @@ public class CreateUserController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = userMapper.buildUser(req);
         userService.createUser(user);
-        req.getRequestDispatcher("/users/read").forward(req, resp);
+        req.getRequestDispatcher("/books/read").forward(req, resp);
     }
 
     @Override

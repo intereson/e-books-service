@@ -4,6 +4,8 @@ import by.intereson.ebooksservice.entities.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class UserRepositoryImpl implements UserRepository {
@@ -49,5 +51,14 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public boolean deleteUser(User user) {
         return users.remove(user);
+    }
+
+    @Override
+    public Optional<User> getUser(String login, String password) {
+        return users.stream()
+                .filter(user -> Objects.equals(user.getLogin(), login))
+                .filter(user -> Objects.equals(user.getPassword(), password))
+                .findFirst();
+
     }
 }
