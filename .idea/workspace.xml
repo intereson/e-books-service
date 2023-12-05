@@ -10,24 +10,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cba97c64-1952-4bde-86b9-76423e016726" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/utils/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/users/createUser.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/AuthenticationUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/BookMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/BookRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/BookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/utils/Access.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/books/createBook.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/books/deleteBook.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/books/readBooks.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/books/updateBook.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/users/authentication.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/users/deleteUser.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/users/updateUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/UserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/utils/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/users/createUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/users/createUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/users/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/users/users.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +57,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -70,23 +91,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/Java project/e-books-serviceold",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/IdeaProjects/final_task_Sergey_Lukashonak&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Java project\e-books-service\src\main" />
@@ -191,7 +212,12 @@
       <option name="presentableId" value="Default" />
       <updated>1701079829399</updated>
       <workItem from="1701079831074" duration="12313000" />
-      <workItem from="1701245253989" duration="28346000" />
+      <workItem from="1701245253989" duration="28831000" />
+      <workItem from="1701355087832" duration="3933000" />
+      <workItem from="1701412928382" duration="32097000" />
+      <workItem from="1701531664834" duration="486000" />
+      <workItem from="1701682597506" duration="14937000" />
+      <workItem from="1701757661892" duration="26313000" />
     </task>
     <servers />
   </component>
@@ -225,9 +251,49 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java</url>
-          <line>23</line>
+          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookController.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/pages/books/updateBook.jsp</url>
+          <line>21</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/pages/books/updateBook.jsp</url>
+          <line>22</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/pages/books/updateBook.jsp</url>
+          <line>16</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateBookController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateBookController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateBookController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateBookController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/pages/books/updateBook.jsp</url>
+          <line>28</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -9,4 +9,9 @@ List<User> readUsers();
 
     User createUser(User user);
 
+    User readUser(long id);
+
+    User updateUser(User user, User userNew);
+
+    boolean deleteUser(User user);
 }

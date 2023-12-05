@@ -17,4 +17,5 @@ public class Book {
     private String publishingHouse;
     private String annotation;
     private double price;
+    private String dateTime;
 }

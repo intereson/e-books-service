@@ -25,6 +25,21 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public User readUser(long id) {
+        return userRepository.readUser(id);
+    }
+
+    @Override
+    public User updateUser(User user, User userNew) {
+        return userRepository.updateUser(user, userNew);
+    }
+
+    @Override
+    public boolean deleteUser(User user) {
+        return userRepository.deleteUser(user);
+    }
+
     public static UserService getInstance() {
         if (userService == null) {
             userService = new UserServiceImpl();

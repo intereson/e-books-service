@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
+import static by.intereson.ebooksservice.utils.Constants.CREATE_USER_PAGE;
 
 @WebServlet(urlPatterns = "/users/create")
 
 public class CreateUserController extends HttpServlet {
+
     private final UserService userService = getInstance();
     private final UserMapper userMapper = new UserMapper();
 
@@ -26,4 +28,8 @@ public class CreateUserController extends HttpServlet {
         req.getRequestDispatcher("/users/read").forward(req, resp);
     }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher(CREATE_USER_PAGE).forward(req,resp);
+    }
 }
