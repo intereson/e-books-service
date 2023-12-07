@@ -16,5 +16,6 @@ List<User> readUsers();
 
     boolean deleteUser(User user);
 
-    Optional<User> getUser(String login, String password);
+    Optional<User> getUser(String login);
+    boolean checkUser(String login);
 }

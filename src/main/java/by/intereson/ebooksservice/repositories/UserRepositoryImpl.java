@@ -1,11 +1,12 @@
 package by.intereson.ebooksservice.repositories;
 
+import by.intereson.ebooksservice.entities.ShoppingCart;
 import by.intereson.ebooksservice.entities.User;
+import by.intereson.ebooksservice.entities.UserType;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class UserRepositoryImpl implements UserRepository {
@@ -13,6 +14,8 @@ public class UserRepositoryImpl implements UserRepository {
     private final List<User> users = new ArrayList<>();
 
     private UserRepositoryImpl() {
+        users.add(new User(0,"Ivan","Ivanov","ivanov@gmail.com",UserType.USER,"ivanov","ivanov2000",new ShoppingCart(),LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+        users.add(new User(1,"Admin","Admin","admin@gmail.com", UserType.ADMIN,"admin","adminadmin", new ShoppingCart(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
     }
 
     public static UserRepository getInstance() {
@@ -54,11 +57,16 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public Optional<User> getUser(String login, String password) {
+    public Optional<User> getUser(String login) {
         return users.stream()
                 .filter(user -> Objects.equals(user.getLogin(), login))
-                .filter(user -> Objects.equals(user.getPassword(), password))
                 .findFirst();
+    }
+
+    @Override
+    public boolean checkUser(String login) {
+        return users.stream()
+                .anyMatch(user -> Objects.equals(user.getLogin(), login));
 
     }
 }

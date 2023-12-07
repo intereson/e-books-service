@@ -15,5 +15,7 @@ public interface UserService {
 
     boolean deleteUser(User user);
 
-    boolean checkUser(HttpServletRequest req);
+    User checkUserLogin(HttpServletRequest req);
+
+    boolean checkUserLogin(String login);
 }

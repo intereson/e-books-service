@@ -9,10 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.CREATE_USER_PAGE;
 
 @WebServlet(urlPatterns = "/users/create")
 
@@ -25,11 +25,11 @@ public class CreateUserController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = userMapper.buildUser(req);
         userService.createUser(user);
-        req.getRequestDispatcher("/books/read").forward(req, resp);
+        req.getRequestDispatcher("/books").forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(CREATE_USER_PAGE).forward(req,resp);
+        doPost(req, resp);
     }
 }

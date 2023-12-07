@@ -25,7 +25,7 @@
             <td>${user.name}</td>
             <td>${user.surname}</td>
             <td>${user.mail}</td>
-            <td>${user.access}</td>
+            <td>${user.userType}</td>
             <td>${user.login}</td>
             <td><a href="/user/shoppingCart"   >
                 <p>Shopping Cart</p>
@@ -46,9 +46,10 @@
         </tr>
     </c:forEach>
     <form action="/users/create">
-
-        <input type="submit" value="Добавить нового пользователя">
-
+        <input type="submit" value="Add new User">
+    </form>
+    <form action="/books/read">
+        <input type="submit" value="Books">
     </form>
     </tbody>
 </table>

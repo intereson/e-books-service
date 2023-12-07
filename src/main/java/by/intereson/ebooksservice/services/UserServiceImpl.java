@@ -43,9 +43,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean checkUser(HttpServletRequest req) {
-        Optional<User> user = userRepository.getUser(req.getParameter("login"), req.getParameter("password"));
-        return user.isPresent();
+    public User checkUserLogin(HttpServletRequest req) {
+        Optional<User> user = userRepository.getUser(req.getParameter("login"));
+        return user.orElse(null);
+    }
+
+    @Override
+    public boolean checkUserLogin(String login) {
+        return userRepository.checkUser(login);
     }
 
     public static UserService getInstance() {

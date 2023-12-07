@@ -23,14 +23,13 @@
     <c:forEach var="user" items="${users}">
         <form action="/users/delete" method="post">
             <tr>
-
                 <td> ${user.id} </td>
                 <td>${user.name}</td>
                 <td>${user.surname}</td>
                 <td>${user.mail}</td>
-                <td>${user.access}</td>
+                <td>${user.userType}</td>
                 <td>${user.login}</td>
-                <td><a href="/user/shoppingCart"   >
+                <td><a href="/user/shoppingCart">
                     <p>Shopping Cart</p>
                     <input type="hidden" name="id" value="${user.shoppingCart.id}">
                 </a>

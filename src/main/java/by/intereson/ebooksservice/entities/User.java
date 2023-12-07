@@ -13,7 +13,7 @@ public class User {
     private String name;
     private String surname;
     private String mail;
-    private String access;
+    private UserType userType;
     private String login;
     private String password;
     private ShoppingCart shoppingCart;

@@ -29,7 +29,7 @@
         </tr>
     </form>
     </a>
-    <a href="/users/create">
+    <a href="/users/registration">
         <p>Registration</p>
     </a>
     </tbody>

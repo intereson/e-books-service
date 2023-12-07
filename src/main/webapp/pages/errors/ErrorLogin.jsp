@@ -5,8 +5,9 @@
 </head>
 <body>
 <p>Error Login Or Password</p>
+<p>Try again</p>
 <a href="/users/authentication">
-  <p>Try again</p>
+  <p>Enter</p>
 </a>
 <a href="/users/create">
     <p>Registration</p>

@@ -11,9 +11,13 @@ import java.util.Optional;
 
 public class BookRepositoryImpl implements BookRepository {
     private static BookRepository bookRepository;
-    private final List<Book> books = //new ArrayList<>();
-    Arrays.asList(new Book(1,"Java полное руководство.Десятое издание.","Герберт Шилдт",2018,"Диалектика","Исчерпывающее описание языка программирования Java",50.2, LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))),
-    new Book(2,"Head first Java 2nd Edition","Kathu Sierra, Bert Bates",2012,"ЭКСМО","Мировой компьтерный бестселлер",44.55,LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+    private final List<Book> books = new ArrayList<>();
+
+    public BookRepositoryImpl() {
+        books.add(new Book(1,"Java полное руководство.Десятое издание.","Герберт Шилдт",2018,"Диалектика","Исчерпывающее описание языка программирования Java",50.2,LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+        books.add(new Book(2,"Head first Java 2nd Edition","Kathu Sierra, Bert Bates",2012,"ЭКСМО","Мировой компьтерный бестселлер",44.55,LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+    }
+
 
 
     public static BookRepository getInstance() {
