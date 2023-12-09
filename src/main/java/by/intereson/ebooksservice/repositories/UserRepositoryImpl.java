@@ -14,8 +14,8 @@ public class UserRepositoryImpl implements UserRepository {
     private final List<User> users = new ArrayList<>();
 
     private UserRepositoryImpl() {
-        users.add(new User(0,"Ivan","Ivanov","ivanov@gmail.com",UserType.USER,"ivanov","ivanov2000",new ShoppingCart(),LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
-        users.add(new User(1,"Admin","Admin","admin@gmail.com", UserType.ADMIN,"admin","adminadmin", new ShoppingCart(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+        users.add(new User(0,"Ivan","Ivanov","ivanov@gmail.com",UserType.USER,"ivanov","ivanov",new ShoppingCart(),LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+        users.add(new User(1,"Admin","Admin","admin@gmail.com", UserType.ADMIN,"admin","admin", new ShoppingCart(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
     }
 
     public static UserRepository getInstance() {
@@ -68,5 +68,20 @@ public class UserRepositoryImpl implements UserRepository {
         return users.stream()
                 .anyMatch(user -> Objects.equals(user.getLogin(), login));
 
+    }
+
+    @Override
+    public Optional<User> getUser(String login, String pass) {
+        return users.stream()
+                .filter(user -> user.getLogin().equals(login))
+                .filter(user -> user.getPassword().equals(pass))
+                .findFirst();
+    }
+
+    @Override
+    public Optional<User> getUserForEmail(String mail) {
+        return users.stream()
+                .filter(user -> Objects.equals(user.getMail(), mail))
+                .findFirst();
     }
 }

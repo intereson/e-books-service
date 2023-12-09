@@ -34,6 +34,7 @@
 
                 <td>
                     <input type="submit" value="DELETE">
+                    <input type="hidden" name="id" value="${book.id}">
                 </td>
                 <a href="/books/read">  <p>CANCEL</p> </a>
             </tr>

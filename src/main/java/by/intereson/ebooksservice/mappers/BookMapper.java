@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
 public class BookMapper {
+    private static final BookMapper bookMapper=getInstance();
     public Book buildBook(HttpServletRequest request) {
         return Book.builder()
                 .bookName(request.getParameter(BOOK_NAME))
@@ -19,5 +20,11 @@ public class BookMapper {
                 .price(Double.parseDouble(request.getParameter(PRICE)))
                 .dateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm")))
                 .build();
+    }
+    public static BookMapper getInstance(){
+        if(bookMapper==null){
+            return new BookMapper();
+        }
+        return bookMapper;
     }
 }

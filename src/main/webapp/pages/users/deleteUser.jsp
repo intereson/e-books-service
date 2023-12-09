@@ -31,12 +31,13 @@
                 <td>${user.login}</td>
                 <td><a href="/user/shoppingCart">
                     <p>Shopping Cart</p>
-                    <input type="hidden" name="id" value="${user.shoppingCart.id}">
+                    <input type="hidden" name="idShoppingCart" value="${user.shoppingCart.idShoppingCart}">
                 </a>
                 </td>
                 <td>${user.dateTime}</td>
                 <td>
                     <input type="submit" value="DELETE">
+                    <input type="hidden" name="id" value="${user.id}">
                 </td>
                 <a href="/users/read">  <p>CANCEL</p> </a>
             </tr>

@@ -15,7 +15,9 @@ public interface UserService {
 
     boolean deleteUser(User user);
 
-    User checkUserLogin(HttpServletRequest req);
+   User getUserForLogin(HttpServletRequest req);
+    boolean checkUserLoginAndPass(String login, String pass);
+    boolean checkUserData(HttpServletRequest request);
 
-    boolean checkUserLogin(String login);
+    User getUserForEmail(HttpServletRequest req);
 }

@@ -11,7 +11,7 @@ import java.io.IOException;
 import static by.intereson.ebooksservice.utils.Constants.REGISTRATION_USER_PAGE;
 
 @WebServlet(urlPatterns = "/users/registration")
-public class RegistrationController extends HttpServlet {
+public  class RegistrationController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

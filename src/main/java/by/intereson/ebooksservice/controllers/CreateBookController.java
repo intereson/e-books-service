@@ -5,7 +5,7 @@ import by.intereson.ebooksservice.mappers.BookMapper;
 import by.intereson.ebooksservice.services.BookService;
 
 import static by.intereson.ebooksservice.services.BookServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.CREATE_BOOK;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/books/create")
 public class CreateBookController extends HttpServlet {
     private final BookService bookService = getInstance();
-    private final BookMapper bookMapper=new BookMapper();
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,8 +26,13 @@ public class CreateBookController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Book book=bookMapper.buildBook(req);
+        if ((req.getParameter("bookName").isEmpty())
+                || (req.getParameter("author").isEmpty()) || (req.getParameter("price").isEmpty())
+        ) {
+            req.getRequestDispatcher(ERROR_DATA_BOOK_PAGE).forward(req, resp);
+        } else {
+        Book book=BookMapper.getInstance().buildBook(req);
         bookService.createBook(book);
         req.getRequestDispatcher("/books/read").forward(req,resp);
     }
-}
+}}

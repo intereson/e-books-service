@@ -12,6 +12,6 @@ import java.util.List;
 @Data
 @Builder
 public class ShoppingCart {
-    private long id;
+    private long idShoppingCart;
     private List<Book> books;
 }

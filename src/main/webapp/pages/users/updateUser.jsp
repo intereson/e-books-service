@@ -45,6 +45,7 @@
                     </label>
                 </td>
                 <input type="submit" value="UPDATE">
+                <input type="hidden" name="id" value="${user.id}">
                 </td>
                 <a href="/users/read"><p>CANCEL</p></a>
             </tr>

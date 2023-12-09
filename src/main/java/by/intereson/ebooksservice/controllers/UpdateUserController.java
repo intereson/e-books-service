@@ -14,27 +14,31 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.UPDATE_USERS_PAGE;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
 @WebServlet(urlPatterns = "/users/update")
 public class UpdateUserController extends HttpServlet {
-    private final UserMapper userMapper = new UserMapper();
+
     private final UserService userService = getInstance();
-    private long id;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        id = Integer.parseInt(req.getParameter("id"));
-        List<User> users = userService.readUsers().stream().filter(user -> user.getId() == id).collect(Collectors.toList());
+        if (req.getParameter("id") == null) {
+            req.getRequestDispatcher(ERROR_ACCESS_PAGE).forward(req, resp);
+        }
+        List<User> users = userService.readUsers().stream()
+                .filter(user -> user.getId() == Integer.parseInt(req.getParameter("id")))
+                .collect(Collectors.toList());
         req.setAttribute("users", users);
         req.getRequestDispatcher(UPDATE_USERS_PAGE).forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = userService.readUser(id);
+        User user = userService.readUser(Integer.parseInt(req.getParameter("id")));
         req.setAttribute("user", user);
-        User userNew = userMapper.buildUser(req);
+        User userNew = UserMapper.getInstance().buildUser(req);
         userService.updateUser(user, userNew);
         req.getRequestDispatcher("/users/read").forward(req, resp);
     }

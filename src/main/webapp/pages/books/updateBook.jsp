@@ -57,6 +57,7 @@
                 <td>${book.dateTime}</td>
                 <td>
                     <input type="submit" value="UPDATE">
+                    <input type="hidden" name="id" value="${book.id}">
                 </td>
                 <a href="/books/read"><p>CANCEL</p></a>
             </tr>

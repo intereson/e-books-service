@@ -20,7 +20,7 @@
                 </label></td>
             <td>
                 <label>
-                    <input type="password" name="password" placeholder="put your password" minlength="8" maxlength="16">
+                    <input type="password" name="password" placeholder="put your password"  maxlength="16">
                 </label>
             </td>
             <td>

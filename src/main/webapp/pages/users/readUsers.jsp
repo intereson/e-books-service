@@ -5,6 +5,9 @@
     <title>Users</title>
 </head>
 <body>
+<form action="/exit">
+    <input type="submit" value="EXIT">
+</form>
 <table>
     <thead>
     <tr>
@@ -27,17 +30,13 @@
             <td>${user.mail}</td>
             <td>${user.userType}</td>
             <td>${user.login}</td>
-            <td><a href="/user/shoppingCart"   >
+            <td><a href="/user/shoppingCart">
                 <p>Shopping Cart</p>
-                <input type="hidden" name="id" value="${user.shoppingCart.id}">
+                <input type="hidden" name="id" value="${user.shoppingCart.idShoppingCart}">
             </a>
             </td>
             <td>${user.dateTime}</td>
             <td>
-                <form action="/users/update" method="get">
-                    <input type="hidden" name="id" value="${user.id}">
-                    <input type="submit" value="Update" style="float:left">
-                </form>
                 <form action="/users/delete" method="get">
                     <input type="hidden" name="id" value="${user.id}">
                     <input type="submit" value="Delete" style="float:left">
@@ -45,12 +44,10 @@
             </td>
         </tr>
     </c:forEach>
-    <form action="/users/create">
-        <input type="submit" value="Add new User">
-    </form>
     <form action="/books/read">
         <input type="submit" value="Books">
     </form>
+
     </tbody>
 </table>
 </body>

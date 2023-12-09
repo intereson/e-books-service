@@ -4,11 +4,10 @@
     <title>Error</title>
 </head>
 <body>
-<p>Error Login</p>
-<p>The entered login or email already exists</p>
-<p>Try again</p>
+<p>Error Access</p>
+
 <a href="/users/authentication">
-  <p>Enter</p>
+    <p>Enter</p>
 </a>
 <a href="/users/registration">
     <p>Registration</p>

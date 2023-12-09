@@ -5,7 +5,9 @@
     <title>Books</title>
 </head>
 <body>
-
+<form action="/users/authentication" method="get">
+    <input type="submit" value="Enter">
+</form>
 <table>
     <thead>
     <tr>
@@ -26,14 +28,8 @@
             <td>${book.publishingHouse}</td>
             <td>${book.annotation}</td>
             <td>${book.price}</td>
-            <td>
-                <form action="/books" method="get">
-                    <input type="hidden" name="id" value="${book.id}">
-                    <input type="submit" value="Put in cart">
-                </form>
-            </td>
         </tr>
     </c:forEach>
-        </tbody>
+    </tbody>
 </table>
 </body>

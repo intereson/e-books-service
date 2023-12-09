@@ -5,6 +5,9 @@
     <title>Books</title>
 </head>
 <body>
+<form action="/exit">
+    <input type="submit" value="EXIT">
+</form>
 <table>
     <thead>
     <tr>
@@ -42,6 +45,7 @@
             </td>
         </tr>
     </c:forEach>
+
     <form action="/books/create">
         <input type="submit" value="Add new book">
     </form>

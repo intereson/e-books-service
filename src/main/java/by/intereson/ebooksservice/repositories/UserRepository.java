@@ -2,6 +2,7 @@ package by.intereson.ebooksservice.repositories;
 
 import by.intereson.ebooksservice.entities.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,4 +19,7 @@ List<User> readUsers();
 
     Optional<User> getUser(String login);
     boolean checkUser(String login);
+    Optional<User> getUser(String login,String pass);
+
+    Optional<User> getUserForEmail(String mail);
 }

@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
 public class UserMapper {
+    public static final UserMapper userMapper=getInstance();
     public User buildUser(HttpServletRequest request) {
         return User.builder()
                 .name(request.getParameter(NAME_USER))
@@ -22,5 +23,11 @@ public class UserMapper {
                 .shoppingCart(new ShoppingCart())
                 .dateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uu HH-mm")))
                 .build();
+    }
+    public static UserMapper getInstance(){
+        if(userMapper==null){
+            return new UserMapper();
+        }
+        return userMapper;
     }
 }
