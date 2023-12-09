@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
-import static by.intereson.ebooksservice.utils.Constants.ERROR_DATA_PAGE;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
 public class UserServiceImpl implements UserService {
     private static UserService userService;
@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserForLogin(HttpServletRequest req) {
-        Optional<User> user = userRepository.getUser(req.getParameter("login"));
+        Optional<User> user = userRepository.getUser(req.getParameter(LOGIN));
         return user.orElse(null);
     }
 
@@ -60,14 +60,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean checkUserData(HttpServletRequest request) {
-        return (!request.getParameter("name").isEmpty())
-                && (!request.getParameter("surname").isEmpty()) && (!request.getParameter("mail").isEmpty()) &&
-                (!request.getParameter("login").isEmpty()) && (!request.getParameter("password").isEmpty());
+        return (!request.getParameter(NAME_USER).isEmpty())
+                && (!request.getParameter(SURNAME_USER).isEmpty()) && (!request.getParameter(MAIL_USER).isEmpty()) &&
+                (!request.getParameter(LOGIN).isEmpty()) && (!request.getParameter(PASSWORD).isEmpty());
     }
 
     @Override
     public User getUserForEmail(HttpServletRequest req) {
-        Optional<User> user = userRepository.getUserForEmail(req.getParameter("mail"));
+        Optional<User> user = userRepository.getUserForEmail(req.getParameter(MAIL_USER));
         return user.orElse(null);
     }
 

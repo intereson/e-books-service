@@ -18,7 +18,7 @@ public class BookMapper {
                 .publishingHouse(request.getParameter(PUBLISHING_HOUSE))
                 .annotation(request.getParameter(ANNOTATION))
                 .price(Double.parseDouble(request.getParameter(PRICE)))
-                .dateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm")))
+                .dateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT)))
                 .build();
     }
     public static BookMapper getInstance(){

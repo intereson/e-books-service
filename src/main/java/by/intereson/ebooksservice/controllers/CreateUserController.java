@@ -17,10 +17,9 @@ import java.io.IOException;
 import java.util.List;
 
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.BOOKS_PAGE_FOR_LOGGING_USER;
-import static by.intereson.ebooksservice.utils.Constants.ERROR_DATA_PAGE;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = "/users/create")
+@WebServlet(urlPatterns = USERS_CREATE_URL)
 
 public class CreateUserController extends HttpServlet {
 
@@ -32,12 +31,12 @@ public class CreateUserController extends HttpServlet {
         User user = UserMapper.userMapper.buildUser(req);
         userService.createUser(user);
         HttpSession session = req.getSession();
-        session.setMaxInactiveInterval(86400);
-        session.setAttribute("login", req.getParameter("login"));
-        session.setAttribute("password", req.getParameter("password"));
+        session.setMaxInactiveInterval(MAX_INACTIVE_INTERVAL_SESSION);
+        session.setAttribute(LOGIN, req.getParameter(LOGIN));
+        session.setAttribute(PASSWORD, req.getParameter(PASSWORD));
         List<Book> books = bookService.readBooks();
-        req.setAttribute("books", books);
-        req.getRequestDispatcher(BOOKS_PAGE_FOR_LOGGING_USER).forward(req, resp);
+        req.setAttribute(BOOKS, books);
+        req.getRequestDispatcher(BOOKS_FOR_LOGGING_USER_PAGE).forward(req, resp);
     }
 
     @Override

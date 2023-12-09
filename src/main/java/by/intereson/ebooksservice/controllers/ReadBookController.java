@@ -12,17 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import static by.intereson.ebooksservice.utils.Constants.BOOKS_PAGE_FOR_ADMIN;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = "/books/read")
+@WebServlet(urlPatterns = BOOKS_READ_URL)
 public class ReadBookController extends HttpServlet {
     private final BookService bookService = BookServiceImpl.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Book> books = bookService.readBooks();
-        req.setAttribute("books", books);
-        req.getRequestDispatcher(BOOKS_PAGE_FOR_ADMIN).forward(req, resp);
+        req.setAttribute(BOOKS, books);
+        req.getRequestDispatcher(BOOKS_FOR_ADMIN_PAGE).forward(req, resp);
     }
 
     @Override

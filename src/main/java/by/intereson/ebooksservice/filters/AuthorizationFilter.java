@@ -18,25 +18,25 @@ import static by.intereson.ebooksservice.entities.UserType.ADMIN;
 import static by.intereson.ebooksservice.entities.UserType.USER;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebFilter(urlPatterns = {"/users/delete","/users/read","/books/*"})
+@WebFilter(urlPatterns = {USERS_DELETE_URL, USERS_READ_URL,"/books/*"})
 public class AuthorizationFilter extends HttpFilter {
     private final BookService bookService = BookServiceImpl.getInstance();
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-        UserType userType = (UserType) req.getSession().getAttribute("userType");
+        UserType userType = (UserType) req.getSession().getAttribute(USER_TYPE);
         if(userType==ADMIN){
             chain.doFilter(req,res);
         }
         if(userType==USER){
             List<Book> books = bookService.readBooks();
-            req.setAttribute("books", books);
-            req.getRequestDispatcher(BOOKS_PAGE_FOR_LOGGING_USER).forward(req,res);
+            req.setAttribute(BOOKS, books);
+            req.getRequestDispatcher(BOOKS_FOR_LOGGING_USER_PAGE).forward(req,res);
         }
         if(userType==null){
 
             req.getRequestDispatcher(ERROR_ACCESS_PAGE).forward(req,res);
         } else {
-            req.getRequestDispatcher(ERROR_LOGIN_OR_EMAIL).forward(req,res);
+            req.getRequestDispatcher(ERROR_LOGIN_OR_EMAIL_PAGE).forward(req,res);
         }
 
     }

@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import static by.intereson.ebooksservice.utils.Constants.BOOKS_PAGE_FOR_USER;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = "/main")
+@WebServlet(urlPatterns = MAIN_PAGE_URL)
 public class ReadBookStartController extends HttpServlet {
 
 
@@ -23,8 +23,8 @@ public class ReadBookStartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Book> books = bookService.readBooks();
-        req.setAttribute("books", books);
-        req.getRequestDispatcher(BOOKS_PAGE_FOR_USER).forward(req, resp);
+        req.setAttribute(BOOKS, books);
+        req.getRequestDispatcher(BOOKS_FOR_USER_PAGE).forward(req, resp);
     }
 
     @Override

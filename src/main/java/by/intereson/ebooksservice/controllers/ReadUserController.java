@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import static by.intereson.ebooksservice.utils.Constants.USERS_PAGE;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = "/users/read")
+@WebServlet(urlPatterns = USERS_READ_URL)
 public class ReadUserController extends HttpServlet {
 
     private final UserService userService = UserServiceImpl.getInstance();
@@ -22,7 +22,7 @@ public class ReadUserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<User> users = userService.readUsers();
-        req.setAttribute("users", users);
+        req.setAttribute(USERS, users);
         req.getRequestDispatcher(USERS_PAGE).forward(req, resp);
     }
 

@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.services.BookServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.DELETE_BOOKS_PAGE;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
 
-@WebServlet(urlPatterns = "/books/delete")
+@WebServlet(urlPatterns = BOOKS_DELETE_URL)
 public class DeleteBookController extends HttpServlet {
 
     private final BookService bookService = getInstance();
@@ -24,18 +24,18 @@ public class DeleteBookController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Book> books = bookService.readBooks().stream()
-                .filter(user -> user.getId() == Integer.parseInt(req.getParameter("id")))
+                .filter(user -> user.getId() == Integer.parseInt(req.getParameter(ID)))
                 .collect(Collectors.toList());
-        req.setAttribute("books", books);
-        req.getRequestDispatcher(DELETE_BOOKS_PAGE).forward(req, resp);
+        req.setAttribute(BOOKS, books);
+        req.getRequestDispatcher(BOOKS_DELETE_PAGE).forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Book book = bookService.readBook(Integer.parseInt(req.getParameter("id")));
+        Book book = bookService.readBook(Integer.parseInt(req.getParameter(ID)));
 
-        req.setAttribute("book", book);
+        req.setAttribute(BOOK, book);
         bookService.deleteBook(book);
-        req.getRequestDispatcher("/books/read").forward(req, resp);
+        req.getRequestDispatcher(BOOKS_READ_URL).forward(req, resp);
     }
 }

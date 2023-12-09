@@ -35,7 +35,7 @@
       <td>${book.annotation}</td>
       <td>${book.price}</td>
       <td>
-        <form action="/users/authentication" method="get">
+        <form action="/users/cart/update" method="get">
           <input type="hidden" name="id" value="${book.id}">
           <input type="submit" value="Put in cart">
         </form>

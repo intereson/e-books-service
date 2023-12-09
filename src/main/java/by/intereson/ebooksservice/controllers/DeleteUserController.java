@@ -14,38 +14,33 @@ import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.entities.UserType.ADMIN;
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.DELETE_USERS_PAGE;
-import static by.intereson.ebooksservice.utils.Constants.ERROR_ACCESS_PAGE;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = "/users/delete")
+@WebServlet(urlPatterns = USERS_DELETE_URL)
 public class DeleteUserController extends HttpServlet {
     private final UserService userService = getInstance();
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameter("id") == null) {
+        if (req.getParameter(ID) == null) {
             req.getRequestDispatcher(ERROR_ACCESS_PAGE).forward(req, resp);
         }
         List<User> users = userService.readUsers().stream()
-                .filter(user -> user.getId() == Integer.parseInt(req.getParameter("id")))
+                .filter(user -> user.getId() == Integer.parseInt(req.getParameter(ID)))
                 .collect(Collectors.toList());
-        req.setAttribute("users", users);
-        req.getRequestDispatcher(DELETE_USERS_PAGE).forward(req, resp);
+        req.setAttribute(USERS, users);
+        req.getRequestDispatcher(USERS_DELETE_PAGE).forward(req, resp);
     }
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = userService.readUser(Integer.parseInt(req.getParameter("id")));
+        User user = userService.readUser(Integer.parseInt(req.getParameter(ID)));
         if (user.getUserType() != ADMIN) {
-            req.setAttribute("user", user);
+            req.setAttribute(USER, user);
             userService.deleteUser(user);
-            req.getRequestDispatcher("/users/read").forward(req, resp);
-        } else {
-            req.getRequestDispatcher("/users/read").forward(req, resp);
+            req.getRequestDispatcher(USERS_READ_URL).forward(req, resp);
         }
-
     }
-
 }

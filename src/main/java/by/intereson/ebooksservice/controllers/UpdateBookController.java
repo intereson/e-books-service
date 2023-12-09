@@ -9,37 +9,35 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.services.BookServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.REGISTRATION_USER_PAGE;
-import static by.intereson.ebooksservice.utils.Constants.UPDATE_BOOKS_PAGE;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = "/books/update")
+@WebServlet(urlPatterns = BOOKS_UPDATE_URL)
 public class UpdateBookController extends HttpServlet {
     private final BookService bookService = getInstance();
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long id = Integer.parseInt(req.getParameter("id"));
+        long id = Integer.parseInt(req.getParameter(ID));
         List<Book> books = bookService.readBooks().stream()
                 .filter(book -> book.getId() == id)
                 .collect(Collectors.toList());
-        req.setAttribute("books", books);
-        req.getRequestDispatcher(UPDATE_BOOKS_PAGE).forward(req, resp);
+        req.setAttribute(BOOKS, books);
+        req.getRequestDispatcher(BOOKS_UPDATE_PAGE).forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Book book = bookService.readBook(Integer.parseInt(req.getParameter("id")));
-        req.setAttribute("book", book);
+        Book book = bookService.readBook(Integer.parseInt(req.getParameter(ID)));
+        req.setAttribute(BOOK, book);
         Book bookNew = BookMapper.getInstance().buildBook(req);
         bookService.updateBook(book, bookNew);
-        req.getRequestDispatcher("/books/read").forward(req, resp);
+        req.getRequestDispatcher(BOOKS_READ_URL).forward(req, resp);
     }
 
 

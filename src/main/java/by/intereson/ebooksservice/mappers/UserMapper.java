@@ -21,7 +21,7 @@ public class UserMapper {
                 .login(request.getParameter(LOGIN))
                 .password(request.getParameter(PASSWORD))
                 .shoppingCart(new ShoppingCart())
-                .dateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uu HH-mm")))
+                .dateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT)))
                 .build();
     }
     public static UserMapper getInstance(){

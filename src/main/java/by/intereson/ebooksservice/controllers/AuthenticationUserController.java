@@ -20,37 +20,37 @@ import static by.intereson.ebooksservice.entities.UserType.ADMIN;
 import static by.intereson.ebooksservice.entities.UserType.USER;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = "/users/authentication")
+@WebServlet(urlPatterns = USERS_AUTHENTICATION_URL)
 public class AuthenticationUserController extends HttpServlet {
     private final UserService userService = UserServiceImpl.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(AUTHENTICATION_USER).forward(req, resp);
+        req.getRequestDispatcher(USERS_AUTHENTICATION_PAGE).forward(req, resp);
     }
 
     private final BookService bookService = BookServiceImpl.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String login = req.getParameter("login");
-        String pass = req.getParameter("password");
+        String login = req.getParameter(LOGIN);
+        String pass = req.getParameter(PASSWORD);
         if (userService.checkUserLoginAndPass(login, pass)) {
             User user = userService.getUserForLogin(req);
             HttpSession session = req.getSession(true);
-            session.setAttribute("userType", user.getUserType());
-            session.setMaxInactiveInterval(86400);
-            session.setAttribute("login", req.getParameter("login"));
+            session.setAttribute(USER_TYPE, user.getUserType());
+            session.setMaxInactiveInterval(MAX_INACTIVE_INTERVAL_SESSION);
+            session.setAttribute(LOGIN, req.getParameter(LOGIN));
             if (user.getUserType() == ADMIN) {
-                req.getRequestDispatcher("/books/read").forward(req, resp);
+                req.getRequestDispatcher(BOOKS_READ_URL).forward(req, resp);
             }
             if (user.getUserType() == USER) {
                 List<Book> books = bookService.readBooks();
-                req.setAttribute("books", books);
-                req.getRequestDispatcher(BOOKS_PAGE_FOR_LOGGING_USER).forward(req, resp);
+                req.setAttribute(BOOKS, books);
+                req.getRequestDispatcher(BOOKS_FOR_LOGGING_USER_PAGE).forward(req, resp);
             }
         } else {
-            req.getRequestDispatcher(ERROR_LOGIN_OR_EMAIL).forward(req, resp);
+            req.getRequestDispatcher(ERROR_LOGIN_OR_EMAIL_PAGE).forward(req, resp);
         }
     }
 }

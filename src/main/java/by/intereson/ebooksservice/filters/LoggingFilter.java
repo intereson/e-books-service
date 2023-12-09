@@ -13,10 +13,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
-import static by.intereson.ebooksservice.utils.Constants.ERROR_DATA_PAGE;
-import static by.intereson.ebooksservice.utils.Constants.ERROR_LOGIN_OR_EMAIL;
+import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebFilter(urlPatterns = "/users/create")
+@WebFilter(urlPatterns = USERS_CREATE_URL)
 public class LoggingFilter extends HttpFilter {
     private final UserService userService = getInstance();
 
@@ -24,21 +23,21 @@ public class LoggingFilter extends HttpFilter {
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
 
 
-        if ((req.getParameter("name").isEmpty())
-                || (req.getParameter("surname").isEmpty()) || (req.getParameter("mail").isEmpty()) ||
-                (req.getParameter("login").isEmpty()) || (req.getParameter("password").isEmpty())) {
+        if ((req.getParameter(NAME_USER).isEmpty())
+                || (req.getParameter(SURNAME_USER).isEmpty()) || (req.getParameter(MAIL_USER).isEmpty()) ||
+                (req.getParameter(LOGIN).isEmpty()) || (req.getParameter(PASSWORD).isEmpty())) {
             req.getRequestDispatcher(ERROR_DATA_PAGE).forward(req, res);
         } else {
             User user = userService.getUserForLogin(req);
             User user1 = userService.getUserForEmail(req);
             if (user == null && user1 == null) {
                 HttpSession session = req.getSession();
-                session.setMaxInactiveInterval(86400);
-                session.setAttribute("login", req.getParameter("login"));
-                session.setAttribute("password", req.getParameter("password"));
+                session.setMaxInactiveInterval(MAX_INACTIVE_INTERVAL_SESSION);
+                session.setAttribute(LOGIN, req.getParameter(LOGIN));
+                session.setAttribute(PASSWORD, req.getParameter(PASSWORD));
                 chain.doFilter(req, res);
             } else {
-                req.getRequestDispatcher(ERROR_LOGIN_OR_EMAIL).forward(req, res);
+                req.getRequestDispatcher(ERROR_LOGIN_OR_EMAIL_PAGE).forward(req, res);
             }
         }
     }
