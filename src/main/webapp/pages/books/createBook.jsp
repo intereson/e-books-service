@@ -1,3 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+    <title>Delete book</title>
+</head>
+<body>
 <table>
     <thead>
     <tr>
@@ -11,7 +17,7 @@
     </tr>
     </thead>
     <tbody>
-    <form action="/books/create" method="post">
+    <form action="<c:url value="/books/create"/>" method="post">
         <tr>
             <td>
                 <label>
@@ -50,3 +56,5 @@
     </form>
     </tbody>
 </table>
+</body>
+</html>

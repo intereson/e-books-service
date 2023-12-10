@@ -10,27 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cba97c64-1952-4bde-86b9-76423e016726" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/AuthenticationUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/AuthenticationUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ExitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ExitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookStartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookStartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/UserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/entities/UserType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/AuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/AuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/LoggingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/user/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/user/DeleteUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/user/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/user/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/BookRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/repositories/BookRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/books/readBooksForLoggingUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/books/readBooksForLoggingUser.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +189,8 @@
       <workItem from="1701855294692" duration="25595000" />
       <workItem from="1701932866954" duration="10468000" />
       <workItem from="1702107973377" duration="1344000" />
-      <workItem from="1702112994361" duration="23903000" />
+      <workItem from="1702112994361" duration="24188000" />
+      <workItem from="1702213461766" duration="5227000" />
     </task>
     <servers />
   </component>
@@ -234,111 +219,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/AuthorizationFilter.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/AuthorizationFilter.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/CreateUserController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/LoggingFilter.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteUserController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteUserController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteUserController.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/DeleteUserController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateUserController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateUserController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateUserController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/UpdateUserController.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/AuthenticationUserController.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/services/UserServiceImpl.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/LoggingFilter.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/LoggingFilter.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/LoggingFilter.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/filters/LoggingFilter.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookStartController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/intereson/ebooksservice/controllers/ReadBookStartController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

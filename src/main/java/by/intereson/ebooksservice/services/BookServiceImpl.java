@@ -5,7 +5,6 @@ import by.intereson.ebooksservice.repositories.BookRepository;
 import by.intereson.ebooksservice.repositories.BookRepositoryImpl;
 
 import java.util.List;
-import java.util.Optional;
 
 public class BookServiceImpl implements BookService {
     private BookServiceImpl() {
@@ -35,7 +34,6 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book readBook(long id) {
         return bookRepository.readBook(id).orElseGet(null);
-
     }
 
     @Override
@@ -45,6 +43,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book updateBook(Book book, Book bookNew) {
-        return bookRepository.updateBook(book,bookNew);
+        return bookRepository.updateBook(book, bookNew);
     }
 }

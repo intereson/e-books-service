@@ -1,11 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Books</title>
 </head>
 <body>
-<form action="/exit">
+<form action="<c:url value="/exit"/>">
     <input type="submit" value="EXIT">
 </form>
 <table>
@@ -23,6 +23,7 @@
     </thead>
     <tbody>
 
+    <jsp:useBean id="books" scope="request" type="java.util.List"/>
     <c:forEach var="book" items="${books}">
         <tr>
             <td> ${book.id} </td>
@@ -34,11 +35,11 @@
             <td>${book.price}</td>
             <td>${book.dateTime}</td>
             <td>
-                <form action="/books/update" method="get">
+                <form action="<c:url value="/books/update"/>" method="get">
                     <input type="hidden" name="id" value="${book.id}">
                     <input type="submit" value="Update" style="float:left">
                 </form>
-                <form action="/books/delete" method="get">
+                <form action="<c:url value="/books/delete"/>" method="get">
                     <input type="hidden" name="id" value="${book.id}">
                     <input type="submit" value="Delete" style="float:left">
                 </form>
@@ -46,10 +47,10 @@
         </tr>
     </c:forEach>
 
-    <form action="/books/create">
+    <form action="<c:url value="/books/create"/>">
         <input type="submit" value="Add new book">
     </form>
-    <form action="/users/read">
+    <form action="<c:url value="/users/read"/>">
         <input type="submit" value="Users">
     </form>
     </tbody>

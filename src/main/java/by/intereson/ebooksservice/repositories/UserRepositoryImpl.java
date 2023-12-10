@@ -2,20 +2,22 @@ package by.intereson.ebooksservice.repositories;
 
 import by.intereson.ebooksservice.entities.ShoppingCart;
 import by.intereson.ebooksservice.entities.User;
-import by.intereson.ebooksservice.entities.UserType;
+import by.intereson.ebooksservice.enums.UserType;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static by.intereson.ebooksservice.utils.Constants.DATE_FORMAT;
+
 public class UserRepositoryImpl implements UserRepository {
     private static UserRepository userRepository;
     private final List<User> users = new ArrayList<>();
 
     private UserRepositoryImpl() {
-        users.add(new User(0,"Ivan","Ivanov","ivanov@gmail.com",UserType.USER,"ivanov","ivanov",new ShoppingCart(),LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
-        users.add(new User(1,"Admin","Admin","admin@gmail.com", UserType.ADMIN,"admin","admin", new ShoppingCart(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+        users.add(new User(0,"Ivan","Ivanov","ivanov@gmail.com",UserType.USER,"ivanov","ivanov",new ShoppingCart(),LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT))));
+        users.add(new User(1,"Admin","Admin","admin@gmail.com", UserType.ADMIN,"admin","admin", new ShoppingCart(), LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT))));
     }
 
     public static UserRepository getInstance() {

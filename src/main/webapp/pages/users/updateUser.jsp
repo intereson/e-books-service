@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8"  isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -16,8 +16,9 @@
     </tr>
     </thead>
     <tbody>
+    <jsp:useBean id="users" scope="request" type="java.util.List"/>
     <c:forEach var="user" items="${users}">
-        <form action="/users/update" method="post">
+        <form action="<c:url value="/users/update"/>" method="post">
             <tr>
                 <td>
                     <label>
@@ -43,11 +44,11 @@
                     <label>
                         <input type="text" name="password">
                     </label>
-                </td>
+                </td><td>
                 <input type="submit" value="UPDATE">
                 <input type="hidden" name="id" value="${user.id}">
                 </td>
-                <a href="/users/read"><p>CANCEL</p></a>
+                <a href="<c:url value="/users/read"/>"><p>CANCEL</p></a>
             </tr>
         </form>
     </c:forEach>

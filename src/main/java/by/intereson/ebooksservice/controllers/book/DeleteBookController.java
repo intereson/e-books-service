@@ -1,4 +1,4 @@
-package by.intereson.ebooksservice.controllers;
+package by.intereson.ebooksservice.controllers.book;
 
 import by.intereson.ebooksservice.entities.Book;
 import by.intereson.ebooksservice.services.BookService;

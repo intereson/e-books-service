@@ -1,4 +1,4 @@
-package by.intereson.ebooksservice.controllers;
+package by.intereson.ebooksservice.controllers.registration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

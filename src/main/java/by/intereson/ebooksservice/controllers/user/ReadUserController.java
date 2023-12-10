@@ -1,8 +1,8 @@
-package by.intereson.ebooksservice.controllers;
+package by.intereson.ebooksservice.controllers.user;
 
-import by.intereson.ebooksservice.entities.Book;
-import by.intereson.ebooksservice.services.BookService;
-import by.intereson.ebooksservice.services.BookServiceImpl;
+import by.intereson.ebooksservice.entities.User;
+import by.intereson.ebooksservice.services.UserService;
+import by.intereson.ebooksservice.services.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,17 +14,16 @@ import java.util.List;
 
 import static by.intereson.ebooksservice.utils.Constants.*;
 
-@WebServlet(urlPatterns = MAIN_PAGE_URL)
-public class ReadBookStartController extends HttpServlet {
+@WebServlet(urlPatterns = USERS_READ_URL)
+public class ReadUserController extends HttpServlet {
 
-
-    private final BookService bookService = BookServiceImpl.getInstance();
+    private final UserService userService = UserServiceImpl.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Book> books = bookService.readBooks();
-        req.setAttribute(BOOKS, books);
-        req.getRequestDispatcher(BOOKS_FOR_USER_PAGE).forward(req, resp);
+        List<User> users = userService.readUsers();
+        req.setAttribute(USERS, users);
+        req.getRequestDispatcher(USERS_PAGE).forward(req, resp);
     }
 
     @Override

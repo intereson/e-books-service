@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Create new user</title>
@@ -15,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <form action="/users/create" method="post">
+    <form action="<c:url value="/users/create"/>" method="post">
         <tr>
             <td>
                 <label>
@@ -38,7 +39,7 @@
                 <label>
                     <input type="password" name="password" placeholder="put your password"  maxlength="16">
                 </label>
-        </td>
+        </td><td>
                 <input type="submit" value="CREATE">
             </td>
         </tr>

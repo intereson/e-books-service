@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -20,8 +20,9 @@
     </thead>
     <tbody>
 
+    <jsp:useBean id="books" scope="request" type="java.util.List"/>
     <c:forEach var="book" items="${books}">
-        <form action="/books/update" method="post">
+        <form action="<c:url value="/books/update"/>" method="post">
             <tr>
                 <td> ${book.id} </td>
                 <td>
@@ -59,7 +60,7 @@
                     <input type="submit" value="UPDATE">
                     <input type="hidden" name="id" value="${book.id}">
                 </td>
-                <a href="/books/read"><p>CANCEL</p></a>
+                <a href="<c:url value="/books/read"/>"><p>CANCEL</p></a>
             </tr>
         </form>
     </c:forEach>

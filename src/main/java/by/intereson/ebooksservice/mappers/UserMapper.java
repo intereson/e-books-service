@@ -2,7 +2,7 @@ package by.intereson.ebooksservice.mappers;
 
 import by.intereson.ebooksservice.entities.ShoppingCart;
 import by.intereson.ebooksservice.entities.User;
-import by.intereson.ebooksservice.entities.UserType;
+import by.intereson.ebooksservice.enums.UserType;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;

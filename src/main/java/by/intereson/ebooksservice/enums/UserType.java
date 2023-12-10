@@ -1,4 +1,4 @@
-package by.intereson.ebooksservice.entities;
+package by.intereson.ebooksservice.enums;
 
 public enum UserType {
     USER,

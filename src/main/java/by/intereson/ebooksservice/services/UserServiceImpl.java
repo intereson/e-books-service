@@ -15,7 +15,6 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository = UserRepositoryImpl.getInstance();
 
     private UserServiceImpl() {
-
     }
 
     @Override
@@ -52,10 +51,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean checkUserLoginAndPass(String login, String pass) {
-        return  userRepository.getUser(login, pass).isPresent();
-
-
-
+        return userRepository.getUser(login, pass).isPresent();
     }
 
     @Override

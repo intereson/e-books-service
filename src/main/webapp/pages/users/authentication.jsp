@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8"  %>
 <html>
 <head>
@@ -12,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    <form action="/users/authentication" method="post">
+    <form action="<c:url value="/users/authentication"/>" method="post">
         <tr>
             <td>
                 <label>
@@ -28,8 +29,8 @@
             </td>
         </tr>
     </form>
-    </a>
-    <a href="/users/registration">
+
+    <a href="<c:url value="/users/registration"/>">
         <p>Registration</p>
     </a>
     </tbody>

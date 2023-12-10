@@ -5,19 +5,19 @@ import by.intereson.ebooksservice.entities.Book;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+import static by.intereson.ebooksservice.utils.Constants.DATE_FORMAT;
 
 public class BookRepositoryImpl implements BookRepository {
     private static BookRepository bookRepository;
     private final List<Book> books = new ArrayList<>();
 
     public BookRepositoryImpl() {
-        books.add(new Book(1,"Java полное руководство.Десятое издание.","Герберт Шилдт",2018,"Диалектика","Исчерпывающее описание языка программирования Java",50.2,LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
-        books.add(new Book(2,"Head first Java 2nd Edition","Kathu Sierra, Bert Bates",2012,"ЭКСМО","Мировой компьтерный бестселлер",44.55,LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.uuuu HH-mm"))));
+        books.add(new Book(1, "Java полное руководство.Десятое издание.", "Герберт Шилдт", 2018, "Диалектика", "Исчерпывающее описание языка программирования Java", 50.2, LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT))));
+        books.add(new Book(2, "Head first Java 2nd Edition", "Kathy Sierra, Bert Bates", 2012, "ЭКСМО", "Мировой компьтерный бестселлер", 44.55, LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT))));
     }
-
 
 
     public static BookRepository getInstance() {

@@ -1,7 +1,7 @@
 package by.intereson.ebooksservice.filters;
 
 import by.intereson.ebooksservice.entities.Book;
-import by.intereson.ebooksservice.entities.UserType;
+import by.intereson.ebooksservice.enums.UserType;
 import by.intereson.ebooksservice.services.BookService;
 import by.intereson.ebooksservice.services.BookServiceImpl;
 
@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import static by.intereson.ebooksservice.entities.UserType.ADMIN;
-import static by.intereson.ebooksservice.entities.UserType.USER;
+import static by.intereson.ebooksservice.enums.UserType.ADMIN;
+import static by.intereson.ebooksservice.enums.UserType.USER;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
 @WebFilter(urlPatterns = {USERS_DELETE_URL, USERS_READ_URL,"/books/*"})

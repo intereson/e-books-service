@@ -1,11 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8"  isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Users</title>
 </head>
 <body>
-<form action="/exit">
+<form action="<c:url value="/exit"/>">
     <input type="submit" value="EXIT">
 </form>
 <table>
@@ -22,6 +22,7 @@
     </tr>
     </thead>
     <tbody>
+    <jsp:useBean id="users" scope="request" type="java.util.List"/>
     <c:forEach var="user" items="${users}">
         <tr>
             <td> ${user.id} </td>
@@ -37,14 +38,14 @@
             </td>
             <td>${user.dateTime}</td>
             <td>
-                <form action="/users/delete" method="get">
+                <form action="<c:url value="/users/delete"/>" method="get">
                     <input type="hidden" name="id" value="${user.id}">
                     <input type="submit" value="Delete" style="float:left">
                 </form>
             </td>
         </tr>
     </c:forEach>
-    <form action="/books/read">
+    <form action="<c:url value="/books/read"/>">
         <input type="submit" value="Books">
     </form>
 

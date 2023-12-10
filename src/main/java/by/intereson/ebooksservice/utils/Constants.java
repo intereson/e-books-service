@@ -24,7 +24,7 @@ public class Constants {
     public static final String ID = "id";
     public static final String USERS = "users";
     public static final String USER = "user";
-    public static final String DATE_FORMAT = "dd.MM.uuuu HH-mm";
+    public static final String DATE_FORMAT = "dd.MM.uuu HH-mm";
     public static final Integer MAX_INACTIVE_INTERVAL_SESSION = 86400;
     /**
      * PAGES

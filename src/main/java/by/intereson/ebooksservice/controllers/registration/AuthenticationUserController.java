@@ -1,4 +1,4 @@
-package by.intereson.ebooksservice.controllers;
+package by.intereson.ebooksservice.controllers.registration;
 
 import by.intereson.ebooksservice.entities.Book;
 import by.intereson.ebooksservice.entities.User;
@@ -16,8 +16,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-import static by.intereson.ebooksservice.entities.UserType.ADMIN;
-import static by.intereson.ebooksservice.entities.UserType.USER;
+import static by.intereson.ebooksservice.enums.UserType.ADMIN;
+import static by.intereson.ebooksservice.enums.UserType.USER;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
 @WebServlet(urlPatterns = USERS_AUTHENTICATION_URL)
