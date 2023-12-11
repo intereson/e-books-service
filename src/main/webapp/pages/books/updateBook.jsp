@@ -37,7 +37,7 @@
                 </td>
                 <td>
                     <label>
-                        <input type="text" name="yearOfPublishing" placeholder="${book.yearOfPublishing}">
+                        <input type="number" name="yearOfPublishing" placeholder="${book.yearOfPublishing}">
                     </label>
                 </td>
                 <td>
@@ -51,9 +51,10 @@
                     </label>
                 </td>
                 <td>
-                    <label>
-                        <input type="text" name="price" placeholder="${book.price}">
-                    </label>
+                    <label>Price</label>
+                    <input type="number" name="price_int" placeholder="put price book">
+                    <input type="number" name="price_frac" min="1" max="99">
+
                 </td>
                 <td>${book.dateTime}</td>
                 <td>

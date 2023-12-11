@@ -4,6 +4,9 @@
     <title>Create new user</title>
 </head>
 <body>
+<form action="<c:url value="/main"/>">
+    <input type="submit" value="EXIT">
+</form>
 <table>
     <thead>
     <tr>

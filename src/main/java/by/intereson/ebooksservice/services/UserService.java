@@ -20,4 +20,6 @@ public interface UserService {
     boolean checkUserData(HttpServletRequest request);
 
     User getUserForEmail(HttpServletRequest req);
+    List<User> getUser(long id);
+
 }

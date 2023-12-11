@@ -16,16 +16,14 @@ import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
 @WebFilter(urlPatterns = USERS_CREATE_URL)
-public class LoggingFilter extends HttpFilter {
+public class RegistrationFilter extends HttpFilter {
     private final UserService userService = getInstance();
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
 
 
-        if ((req.getParameter(NAME_USER).isEmpty())
-                || (req.getParameter(SURNAME_USER).isEmpty()) || (req.getParameter(MAIL_USER).isEmpty()) ||
-                (req.getParameter(LOGIN).isEmpty()) || (req.getParameter(PASSWORD).isEmpty())) {
+        if (!userService.checkUserData(req)) {
             req.getRequestDispatcher(ERROR_DATA_PAGE).forward(req, res);
         } else {
             User user = userService.getUserForLogin(req);

@@ -18,6 +18,8 @@ public class Constants {
     public static final String PUBLISHING_HOUSE = "publishingHouse";
     public static final String ANNOTATION = "annotation";
     public static final String PRICE = "price";
+    public static final String PRICE_INT = "price_int";
+    public static final String PRICE_FRAC = "price_frac";
     public static final String USER_TYPE = "userType";
     public static final String BOOKS = "books";
     public static final String BOOK = "book";

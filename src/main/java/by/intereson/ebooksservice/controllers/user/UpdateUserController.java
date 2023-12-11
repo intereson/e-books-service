@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
 import static by.intereson.ebooksservice.utils.Constants.*;
@@ -27,10 +26,8 @@ public class UpdateUserController extends HttpServlet {
         if (req.getParameter(ID) == null) {
             req.getRequestDispatcher(ERROR_ACCESS_PAGE).forward(req, resp);
         } else {
-            List<User> users = userService.readUsers().stream()
-                    .filter(user -> user.getId() == Integer.parseInt(req.getParameter(ID)))
-                    .collect(Collectors.toList());
-            req.setAttribute(USERS, users);
+            List<User> user = userService.getUser(Integer.parseInt(req.getParameter(ID)));
+            req.setAttribute(USERS, user);
             req.getRequestDispatcher(USERS_UPDATE_PAGE).forward(req, resp);
         }
     }

@@ -32,7 +32,7 @@
                 </td>
                 <td>
                     <label>
-                        <input type="text" name="mail" placeholder="${user.mail}">
+                        <input type="email" name="mail" placeholder="${user.mail}">
                     </label>
                 </td>
                 <td>

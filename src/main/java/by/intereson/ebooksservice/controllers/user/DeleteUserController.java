@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.enums.UserType.ADMIN;
 import static by.intereson.ebooksservice.services.UserServiceImpl.getInstance;
@@ -26,9 +25,7 @@ public class DeleteUserController extends HttpServlet {
         if (req.getParameter(ID) == null) {
             req.getRequestDispatcher(ERROR_ACCESS_PAGE).forward(req, resp);
         } else {
-            List<User> users = userService.readUsers().stream()
-                    .filter(user -> user.getId() == Integer.parseInt(req.getParameter(ID)))
-                    .collect(Collectors.toList());
+            List<User> users = userService.getUser(Integer.parseInt(req.getParameter(ID)));
             req.setAttribute(USERS, users);
             req.getRequestDispatcher(USERS_DELETE_PAGE).forward(req, resp);
         }

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.services.BookServiceImpl.getInstance;
 import static by.intereson.ebooksservice.utils.Constants.*;
@@ -23,22 +22,22 @@ public class UpdateBookController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long id = Integer.parseInt(req.getParameter(ID));
-        List<Book> books = bookService.readBooks().stream()
-                .filter(book -> book.getId() == id)
-                .collect(Collectors.toList());
-        req.setAttribute(BOOKS, books);
+        List<Book> book = bookService.getBook(Integer.parseInt(req.getParameter(ID)));
+        req.setAttribute(BOOKS, book);
         req.getRequestDispatcher(BOOKS_UPDATE_PAGE).forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Book book = bookService.readBook(Integer.parseInt(req.getParameter(ID)));
-        req.setAttribute(BOOK, book);
-        Book bookNew = BookMapper.getInstance().buildBook(req);
-        bookService.updateBook(book, bookNew);
-        req.getRequestDispatcher(BOOKS_READ_URL).forward(req, resp);
+        if (bookService.checkBookData(req)) {
+            Book book = bookService.readBook(Integer.parseInt(req.getParameter(ID)));
+            req.setAttribute(BOOK, book);
+            req.setAttribute(PRICE,bookService.getPrice(req));
+            Book bookNew = BookMapper.getInstance().buildBook(req);
+            bookService.updateBook(book, bookNew);
+            req.getRequestDispatcher(BOOKS_READ_URL).forward(req, resp);
+        } else {
+            req.getRequestDispatcher(ERROR_DATA_BOOK_PAGE).forward(req, resp);
+        }
     }
-
-
 }

@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Delete book</title>
+    <title>Create book</title>
 </head>
 <body>
 <table>
@@ -31,7 +31,7 @@
             </td>
             <td>
                 <label>
-                    <input type="text" name="yearOfPublishing" placeholder="put year of publishing">
+                    <input type="number" name="yearOfPublishing" placeholder="put year of publishing">
                 </label>
             </td>
             <td>
@@ -45,9 +45,9 @@
                 </label>
             </td>
             <td>
-                <label>
-                    <input type="text" name="price" placeholder="put price book">
-                </label>
+                <label>Price</label>
+                    <input type="number" name="price_int" placeholder="put price book">
+                    <input type="number" name="price_frac" min="1" max="99">
             </td>
             <td>
                 <input type="submit" value="CREATE">

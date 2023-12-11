@@ -17,7 +17,7 @@ public class BookMapper {
                 .yearOfPublishing(Integer.parseInt(request.getParameter(YEAR_OF_PUBLISHING)))
                 .publishingHouse(request.getParameter(PUBLISHING_HOUSE))
                 .annotation(request.getParameter(ANNOTATION))
-                .price(Double.parseDouble(request.getParameter(PRICE)))
+                .price((Double) request.getAttribute(PRICE))
                 .dateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT)))
                 .build();
     }

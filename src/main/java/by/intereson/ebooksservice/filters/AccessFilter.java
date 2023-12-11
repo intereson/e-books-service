@@ -19,7 +19,7 @@ import static by.intereson.ebooksservice.enums.UserType.USER;
 import static by.intereson.ebooksservice.utils.Constants.*;
 
 @WebFilter(urlPatterns = {USERS_DELETE_URL, USERS_READ_URL,"/books/*"})
-public class AuthorizationFilter extends HttpFilter {
+public class AccessFilter extends HttpFilter {
     private final BookService bookService = BookServiceImpl.getInstance();
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
@@ -33,11 +33,9 @@ public class AuthorizationFilter extends HttpFilter {
             req.getRequestDispatcher(BOOKS_FOR_LOGGING_USER_PAGE).forward(req,res);
         }
         if(userType==null){
-
             req.getRequestDispatcher(ERROR_ACCESS_PAGE).forward(req,res);
         } else {
-            req.getRequestDispatcher(ERROR_LOGIN_OR_EMAIL_PAGE).forward(req,res);
+            req.getRequestDispatcher(ERROR_ACCESS_PAGE).forward(req,res);
         }
-
     }
 }

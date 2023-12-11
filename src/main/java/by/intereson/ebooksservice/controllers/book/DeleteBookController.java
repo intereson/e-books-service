@@ -23,17 +23,14 @@ public class DeleteBookController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Book> books = bookService.readBooks().stream()
-                .filter(user -> user.getId() == Integer.parseInt(req.getParameter(ID)))
-                .collect(Collectors.toList());
-        req.setAttribute(BOOKS, books);
+        List<Book> book = bookService.getBook(Integer.parseInt(req.getParameter(ID)));
+        req.setAttribute(BOOKS, book);
         req.getRequestDispatcher(BOOKS_DELETE_PAGE).forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Book book = bookService.readBook(Integer.parseInt(req.getParameter(ID)));
-
         req.setAttribute(BOOK, book);
         bookService.deleteBook(book);
         req.getRequestDispatcher(BOOKS_READ_URL).forward(req, resp);

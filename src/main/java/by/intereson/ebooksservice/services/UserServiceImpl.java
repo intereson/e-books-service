@@ -7,6 +7,7 @@ import by.intereson.ebooksservice.repositories.UserRepositoryImpl;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static by.intereson.ebooksservice.utils.Constants.*;
 
@@ -65,6 +66,13 @@ public class UserServiceImpl implements UserService {
     public User getUserForEmail(HttpServletRequest req) {
         Optional<User> user = userRepository.getUserForEmail(req.getParameter(MAIL_USER));
         return user.orElse(null);
+    }
+
+    @Override
+    public List<User> getUser(long id) {
+        return readUsers().stream()
+                .filter(user -> user.getId() ==id)
+                .collect(Collectors.toList());
     }
 
 

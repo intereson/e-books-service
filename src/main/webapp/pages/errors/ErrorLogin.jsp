@@ -8,11 +8,11 @@
 <p>Error Login</p>
 <p>The entered login or email already exists</p>
 <p>Try again</p>
-<a href="<c:url value="/users/authentication"/>">
-  <p>Enter</p>
+<a href="<c:url value="/exit"/>">
+  <p>EXIT</p>
 </a>
 <a href="<c:url value="/users/registration"/>">
-    <p>Registration</p>
+    <p>Try again</p>
 </a>
 </body>
 </html>
